@@ -1,0 +1,68 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.heading {
+  @include font-primary;
+
+  &.medium {
+    font-weight: 500;
+  }
+
+  &1 {
+    font-size: pxToRem(60);
+    font-weight: normal;
+    line-height: normal;
+
+    @include media("tablet-landscape") {
+      font-size: pxToRem(72);
+    }
+  }
+
+  &2 {
+    font-size: pxToRem(36);
+    font-weight: normal;
+    line-height: normal;
+
+    @include media("tablet-landscape") {
+      font-size: pxToRem(48);
+    }
+  }
+
+  &3 {
+    font-size: pxToRem(36);
+    font-weight: normal;
+    line-height: normal;
+  }
+
+  &4 {
+    font-size: pxToRem(24);
+    font-weight: normal;
+    line-height: normal;
+  }
+
+  &5 {
+    font-size: pxToRem(20);
+    font-weight: normal;
+    line-height: normal;
+  }
+}
+
+.body {
+  @include font-primary;
+  font-weight: normal;
+  white-space: break-spaces;
+
+  &.medium {
+    font-weight: 500;
+  }
+
+  &1 {
+    font-size: pxToRem(18);
+    line-height: normal;
+  }
+
+  &2 {
+    font-size: pxToRem(16);
+    line-height: 1.5;
+  }
+}
