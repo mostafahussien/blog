@@ -14,6 +14,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = memo(({ allPosts = [] }) => {
   return (
     <div>
+      <h1>Home</h1>
       {allPosts.length > 0 &&
         allPosts.map(post => (
           <div key={post.slug}>
