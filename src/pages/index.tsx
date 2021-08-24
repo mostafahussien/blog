@@ -19,7 +19,7 @@ const Home: NextPage<HomeProps> = memo(({ allPosts = [] }) => {
       {allPosts.length > 0 &&
         allPosts.map(post => (
           <div key={post.slug}>
-            <img src={`${sitePrefix}/${post.coverImage}`} alt="" />
+            <img src={`${sitePrefix}${post.coverImage}`} alt="" />
             <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
               <a className="hover:underline">{post.title}</a>
             </Link>
