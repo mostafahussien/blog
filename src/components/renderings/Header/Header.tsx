@@ -1,8 +1,8 @@
 import { memo, useContext } from "react";
 
+import Link from "next/link";
 import { Container, Row } from "react-grid-system";
 
-import Link from "@app/components/atoms/Link/Link";
 import { ThemeContext } from "@app/context/ThemeProvider";
 import { sitePrefix } from "@app/helpers/util.helpers";
 
@@ -33,9 +33,17 @@ const Header = ({ menuLinksCollection }: HeaderProps) => {
     <header className={styles.header}>
       <Container>
         <Row justify="between" align="center" className={styles.headerWrapper}>
-          <img className={styles.logo} src={`${sitePrefix}${logo}`} alt="" />
+          <Link href="/">
+            <a>
+              <img
+                className={styles.logo}
+                src={`${sitePrefix}${logo}`}
+                alt=""
+              />
+            </a>
+          </Link>
           <button className={styles.button} onClick={setTheme}>
-            switch darkmode
+            Switch DarkMode
           </button>
           {menuLinksCollection?.items && (
             <ul>

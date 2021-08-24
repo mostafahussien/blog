@@ -2,6 +2,10 @@ import { NextPage } from "next";
 
 import { memo } from "react";
 
+import { Container } from "react-grid-system";
+
+import PostBody from "@app/components/atoms/PostBody/PostBody";
+import DefaultLayout from "@app/components/layouts/DefaultLayout/DefaultLayout";
 import { getAllPosts, getPostBySlug } from "@app/lib/api";
 import markdownToHtml from "@app/lib/markdownToHtml";
 import PostType from "@app/types/post";
@@ -12,7 +16,13 @@ interface PostProps {
 
 const Post: NextPage<PostProps> = memo(({ post }: PostProps) => {
   console.log(post);
-  return <div>post</div>;
+  return (
+    <DefaultLayout>
+      <Container>
+        {!!post.content && <PostBody content={post.content} />}
+      </Container>
+    </DefaultLayout>
+  );
 });
 
 export default Post;
