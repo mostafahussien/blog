@@ -1,0 +1,26 @@
+@import "styles/variables";
+
+.cardWrapper {
+  margin-bottom: $spacing-8;
+}
+
+.imageWrapper {
+  margin-bottom: $spacing-6;
+  img {
+    max-width: 100%;
+  }
+}
+
+.title {
+  color: var(--color-fill-1);
+  margin: $spacing-4 0;
+}
+
+.date {
+  color: var(--color-fill-2);
+}
+
+.excerpt {
+  color: var(--color-fill-2);
+  margin-bottom: $spacing-4;
+}

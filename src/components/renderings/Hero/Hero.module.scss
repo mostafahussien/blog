@@ -1,0 +1,27 @@
+@import "styles/variables";
+
+.hero {
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: $spacing-5;
+}
+
+.textWrapper {
+  text-align: center;
+  color: var(--color-white);
+}

@@ -2,10 +2,9 @@ import { NextPage } from "next";
 
 import { memo } from "react";
 
-import Link from "next/link";
-
 import DefaultLayout from "@app/components/layouts/DefaultLayout/DefaultLayout";
-import { sitePrefix } from "@app/helpers/util.helpers";
+import ArticlesList from "@app/components/renderings/ArticlesList/ArticlesList";
+import Hero from "@app/components/renderings/Hero/Hero";
 import { getAllPosts } from "@app/lib/api";
 import Post from "@app/types/post";
 
@@ -16,7 +15,9 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = memo(({ allPosts = [] }) => {
   return (
     <DefaultLayout>
-      <div>
+      <Hero />
+      <ArticlesList posts={allPosts} />
+      {/* <div>
         <h1>Home</h1>
         {allPosts.length > 0 &&
           allPosts.map(post => (
@@ -27,7 +28,7 @@ const Home: NextPage<HomeProps> = memo(({ allPosts = [] }) => {
               </Link>
             </div>
           ))}
-      </div>
+      </div> */}
     </DefaultLayout>
   );
 });

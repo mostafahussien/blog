@@ -4,7 +4,7 @@ import { memo } from "react";
 
 import { Container } from "react-grid-system";
 
-import PostBody from "@app/components/atoms/PostBody/PostBody";
+import ArticleBody from "@app/components/atoms/ArticleBody/ArticleBody";
 import DefaultLayout from "@app/components/layouts/DefaultLayout/DefaultLayout";
 import { getAllPosts, getPostBySlug } from "@app/lib/api";
 import markdownToHtml from "@app/lib/markdownToHtml";
@@ -15,11 +15,10 @@ interface PostProps {
 }
 
 const Post: NextPage<PostProps> = memo(({ post }: PostProps) => {
-  console.log(post);
   return (
     <DefaultLayout>
       <Container>
-        {!!post.content && <PostBody content={post.content} />}
+        {!!post.content && <ArticleBody content={post.content} />}
       </Container>
     </DefaultLayout>
   );
