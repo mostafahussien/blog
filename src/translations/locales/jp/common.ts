@@ -1,6 +1,6 @@
 const common = {
   navHome: "Home",
-  localeSwitcher: "jpLanguage",
+  localeSwitcher: "言語",
 };
 
 export default common;

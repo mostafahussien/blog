@@ -8,6 +8,8 @@ import useTranslation from "@app/hooks/useTranslation";
 import { locales } from "@app/translations/config";
 import { Translations } from "@app/translations/types";
 
+import styles from "./LocaleSwitcher.module.scss";
+
 const LocaleSwitcher: React.FC = () => {
   const router = useRouter();
 
@@ -28,9 +30,13 @@ const LocaleSwitcher: React.FC = () => {
   const common = t("common") as Translations;
   return (
     <div>
-      <label className="language-switcher">
+      <label className={styles.label}>
         {common.localeSwitcher}
-        <select onChange={handleLocaleChange} defaultValue={locale}>
+        <select
+          className={styles.select}
+          onChange={handleLocaleChange}
+          defaultValue={locale}
+        >
           {locales.map((el, i) => (
             <option value={el} key={i}>
               {el}
