@@ -2,6 +2,7 @@ import Author from "./author";
 
 type PostType = {
   slug: string;
+  lang: string;
   title: string;
   date: string;
   coverImage: string;

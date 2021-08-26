@@ -1,11 +1,10 @@
 import { memo } from "react";
 
-import Link from "next/link";
-
 import DateFormatter from "@app/components/atoms/DateFormatter/DateFormatter";
 import { sitePrefix } from "@app/helpers/util.helpers";
 import Post from "@app/types/post";
 
+import LocaleLink from "../LocaleLink/LocaleLink";
 import { Body, Heading } from "../Typography/Typography";
 import styles from "./ArticleCard.module.scss";
 import Author from "./components/Author/Author";
@@ -16,13 +15,13 @@ interface ArticleCardProps {
 const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <div className={styles.cardWrapper}>
-      <Link as={`/posts/${article.slug}`} href="/posts/[slug]">
+      <LocaleLink as={`/posts/${article.slug}`} href="/posts/[slug]">
         <a>
           <div className={styles.imageWrapper}>
             <img src={`${sitePrefix}${article.coverImage}`} alt="" />
           </div>
         </a>
-      </Link>
+      </LocaleLink>
 
       <Body level={2} className={styles.date}>
         <DateFormatter dateString={article.date} />

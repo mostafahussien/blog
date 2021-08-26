@@ -3,8 +3,11 @@ import { memo, useContext } from "react";
 import Link from "next/link";
 import { Container, Row } from "react-grid-system";
 
+import LocaleLink from "@app/components/atoms/LocaleLink/LocaleLink";
+import LocaleSwitcher from "@app/components/atoms/LocaleSwitcher/LocaleSwitcher";
 import { ThemeContext } from "@app/context/ThemeProvider";
 import { sitePrefix } from "@app/helpers/util.helpers";
+import useTranslation from "@app/hooks/useTranslation";
 
 import styles from "./Header.module.scss";
 
@@ -21,6 +24,8 @@ export interface HeaderProps {
   };
 }
 const Header = ({ menuLinksCollection }: HeaderProps) => {
+  const { locale } = useTranslation();
+
   const { mode, setTheme } = useContext(ThemeContext);
 
   const darkModeLogo = "/assets/img/logo/ml-logo-yellow.png";
@@ -33,7 +38,7 @@ const Header = ({ menuLinksCollection }: HeaderProps) => {
     <header className={styles.header}>
       <Container>
         <Row justify="between" align="center" className={styles.headerWrapper}>
-          <Link href="/">
+          <Link href={`/${locale}`}>
             <a>
               <img
                 className={styles.logo}
@@ -54,6 +59,7 @@ const Header = ({ menuLinksCollection }: HeaderProps) => {
               ))}
             </ul>
           )}
+          <LocaleSwitcher />
         </Row>
       </Container>
     </header>
